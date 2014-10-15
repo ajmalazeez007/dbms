@@ -26,10 +26,19 @@
             android:name="com.gc.cricket.AddPlayer"
             android:label="@string/title_activity_ain" >
         </activity>
+         <activity
+            android:name="com.gc.cricket.AddBatting"
+            android:label="@string/title_activity_ain" >
+        </activity>
           <activity
             android:name="com.gc.cricket.AddBowling"
             android:label="@string/title_activity_ain" >
         </activity>
+         <activity
+            android:name="com.gc.cricket.EditPlayer"
+            android:label="@string/title_activity_ain" >
+        </activity>
+       
     </application>
 
 </manifest>

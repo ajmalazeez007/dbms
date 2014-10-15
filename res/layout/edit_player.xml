@@ -36,6 +36,30 @@
         android:hint="age"
         android:inputType="phone" />
 
+    <EditText
+        android:id="@+id/n_six"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="six"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/n_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="four"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/t_runs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="runs"
+        android:inputType="phone" />
+
     <Spinner
         android:id="@+id/team"
         android:layout_width="match_parent"
@@ -45,6 +69,6 @@
         android:id="@+id/addplayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add" />
+        android:text="Submit Changes" />
 
 </LinearLayout>

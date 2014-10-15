@@ -9,42 +9,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Jersy number"
+        android:hint="jersy "
+        android:inputType="phone" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/runs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="runs"
         android:inputType="phone" />
 
     <EditText
-        android:id="@+id/f_name"
+        android:id="@+id/no_four"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="firstname"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/l_name"
+        android:hint="fours"
+        android:inputType="phone" />
+    
+      <EditText
+        android:id="@+id/no_six"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="sixs"
         android:ems="10"
-        android:hint="lastname"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="age"
         android:inputType="phone" />
 
-    <Spinner
-        android:id="@+id/team"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/addplayer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add" />
+      <Button
+          android:id="@+id/add_batting"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="ADD" />
 
 </LinearLayout>

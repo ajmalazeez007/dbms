@@ -9,50 +9,46 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class AddBowling extends Activity {
-EditText jnum,overs,wickets,runs,dot,four,six;
-Button addbownling;
+public class AddBatting extends Activity {
+EditText jnum,runs,dot,four,six;
+Button addbatting;
 CricketDatabase cricketDatabase;
 SQLiteDatabase sqLiteDatabase;
 ContentValues contentValues;
-String sjnum,sovers,swickets,sruns,sdot,sfour,ssix;
+String sjnum,sruns,sfour,ssix;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.add_bowling);
+		setContentView(R.layout.add_batting);
 		jnum = (EditText) findViewById(R.id.p_id);
-		overs = (EditText) findViewById(R.id.overs);
-		wickets = (EditText) findViewById(R.id.wickets);
-		runs = (EditText) findViewById(R.id.runs);
-		dot = (EditText) findViewById(R.id.no_dotballs);
-		four = (EditText) findViewById(R.id.no_four);
-		six = (EditText) findViewById(R.id.no_six);
-		addbownling = (Button) findViewById(R.id.add_bownling);
+		runs = (EditText)findViewById(R.id.runs);
+		four =(EditText)findViewById(R.id.no_four);
+		six =(EditText)findViewById(R.id.no_six);
+		addbatting =(Button)findViewById(R.id.add_batting);
 		cricketDatabase = new CricketDatabase(getApplicationContext());
 		sqLiteDatabase = cricketDatabase.getSQLiteDataBase();
 		contentValues = new ContentValues();
-		addbownling.setOnClickListener(new OnClickListener() {
+		addbatting.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				sjnum = jnum.getText().toString();
-				sovers = overs.getText().toString();
-				swickets = wickets.getText().toString();
+				
 				sruns = runs.getText().toString();
-				sdot = dot.getText().toString();
+				
 				sfour = four.getText().toString();
 				ssix = six.getText().toString();
 				contentValues.put("PID", Integer.parseInt(sjnum));
-				contentValues.put("OVERS",Integer.parseInt(sovers) );
-				contentValues.put("WICKETS", Integer.parseInt(swickets));
+			
+				
 				contentValues.put("RUNS", Integer.parseInt(sruns));
-				contentValues.put("DOT", Integer.parseInt(sdot));
+				
 				contentValues.put("FOUR", Integer.parseInt(sfour));
 				contentValues.put("SIX", Integer.parseInt(ssix));
 				
-				sqLiteDatabase.insert("BOWLING", null, contentValues);
+				sqLiteDatabase.insert("BATTING", null, contentValues);
 				
 			}
 		});

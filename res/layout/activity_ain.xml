@@ -8,27 +8,54 @@
     tools:ignore="MergeRootFrame" >
 
     <Button
-        android:id="@+id/addbatsman"
+        android:id="@+id/addplayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Batsman" />
+        android:text="Add Player" />
+
+    <Button
+        android:id="@+id/adbater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add batting stat" />
 
     <Button
         android:id="@+id/addbowler"
-        android:layout_width="135dp"
+        android:layout_width="204dp"
         android:layout_height="wrap_content"
-        android:text="Add Bowler" />
+        android:text="Add bowling stat" />
+
+    <EditText
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="Enter jersy number to be deleted"
+        android:inputType="number" >
+    </EditText>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/b_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Delete" />
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/b_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="EDIT" />
 
 </LinearLayout>

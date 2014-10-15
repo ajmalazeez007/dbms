@@ -10,14 +10,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-public class AddPlayer extends Activity {
+public class EditPlayer extends Activity {
 	CricketDatabase cricketDatabase;
 	 SQLiteDatabase sqLiteDatabase;
 	 EditText fname,lname,age,pid;
 	 Button add;
 	 Spinner team;
-	 String sfname,slname,sage,ssix,sfour,srun,sjersy;
+	 String sfname,slname,sage,ssix,sfour,srun,sjersy,oldid;
 	 String[] steam; 
 	 ContentValues contentValues;
 	 ArrayAdapter<String> adapter;
@@ -32,11 +33,14 @@ public class AddPlayer extends Activity {
 		pid = (EditText) findViewById(R.id.p_id);
 		lname = (EditText) findViewById(R.id.l_name);
 		age = (EditText) findViewById(R.id.age);
-	
+		oldid=AinActivity.j_no;
+		
+		Toast.makeText(getApplicationContext(), oldid, Toast.LENGTH_LONG).show();
 		contentValues = new ContentValues();
+		
 		add = (Button) findViewById(R.id.addplayer);
 		team = (Spinner) findViewById(R.id.team);
-		adapter = new ArrayAdapter<String>(AddPlayer.this, android.R.layout.simple_list_item_1, android.R.id.text1, steam);
+		adapter = new ArrayAdapter<String>(EditPlayer.this, android.R.layout.simple_list_item_1, android.R.id.text1, steam);
 		team.setAdapter(adapter);
 		cricketDatabase = new CricketDatabase(getApplicationContext());
 		sqLiteDatabase = cricketDatabase.getSQLiteDataBase();
@@ -55,7 +59,13 @@ public class AddPlayer extends Activity {
 				contentValues.put("AGE", Integer.parseInt(sage));
 				contentValues.put("TEAM", team.getSelectedItemPosition());
 				
-				sqLiteDatabase.insert("PLAYER", null, contentValues);
+				sqLiteDatabase.update("PLAYER", contentValues, "PID="+oldid, null);
+				ContentValues pid = new ContentValues();
+				pid.put("PID",sjersy);
+				sqLiteDatabase.update("BATTING", pid, "PID="+oldid, null);
+				sqLiteDatabase.update("BOWLING", pid, "PID="+oldid, null);
+				
+				
 			}
 		});
 		
